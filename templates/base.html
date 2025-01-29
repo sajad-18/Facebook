@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     {% block link %} {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Facebook</title>
 </head>
 <body>
