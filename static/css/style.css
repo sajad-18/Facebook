@@ -10,52 +10,61 @@ nav{
     margin-bottom: 70px;
 }
 
-ul {
+.navbar {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 6px;
     background-color: white;
     overflow: hidden;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    box-shadow: 0px 2px rgb(219, 219, 219);
+    box-shadow: 0 1px 2px #afafaf;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-li {
-    float: left;
-    margin: 10px;
-    display: block;
+.navbar li {
+    display: flex;
+    align-items: center;
 }
 
 .icon-search{
-    float: left;
-
-
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
 }
 
 .icon-search img{
-    width: 35px;
+    width: 40px;
 }
 
 .icon-search input{
-    width: 150px;
+    width: 250px;
     border: 0px;
-    border-radius: 15px;
+    border-radius: 40px;
     background-color: #f0f2f5;
-    padding: 2px;
+    padding: 10px;
+    margin-left: 10px;
 }
 
-.pages{
-    margin-left: 150px;
-    margin-right: 100px;
-    position: relative;
-
+.pages {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
 }
 
 .pages a{
     color: #65676b;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 40px;
 }
 
 .pages a:focus{
@@ -63,39 +72,21 @@ li {
 
 }
 
-.pages div{
-    float: left;
-}
-
-.pages div:hover{
+.pages a:hover{
     border-radius: 10px;
     background-color: #ececec;
 }
 
 .pages svg{
-    width: 20px;
-
-    margin-right: 40px;
-    margin-left: 40px;
-
+    width: 30px;
 }
 
 .profile{
-
-    float: right;
-
-}
-
-.profile input{
-    width: 100px;
-    border: 0px;
-    border-radius: 15px;
-    background-color: #f0f2f5;
-    padding: 2px;
+    margin: 0 15px 0 300px;
 }
 
 .profile img{
-    width: 40px;
+    width: 50px;
 }
 
 .master{
@@ -105,4 +96,34 @@ li {
     margin-left: auto;
     margin-right: auto;
 
+}
+
+.messages-success{
+    background-color: rgba(201, 247, 199, 0.74);
+    border: 1px solid green;
+    border-radius: 5px;
+    color: green;
+    width: 75%;
+    margin-left: 20px;
+    padding: 15px;
+}
+
+.messages-danger{
+    background-color: rgba(247, 199, 199, 0.74);
+    border: 1px solid red;
+    border-radius: 5px;
+    color: red;
+    width: 75%;
+    margin-left: 20px;
+    padding: 15px;
+}
+
+.messages-warning{
+    background-color: rgba(244, 247, 199, 0.74);
+    border: 1px solid rgb(221, 206, 0);
+    border-radius: 5px;
+    color: rgb(189, 176, 1);
+    width: 75%;
+    margin-left: 20px;
+    padding: 15px;
 }

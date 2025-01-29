@@ -34,37 +34,6 @@
     float: right;
 }
 
-.messages-success{
-    background-color: rgba(201, 247, 199, 0.74);
-    border: 1px solid green;
-    border-radius: 5px;
-    color: green;
-    width: 75%;
-    margin-left: 20px;
-    padding: 15px;
-}
-
-.messages-danger{
-    background-color: rgba(247, 199, 199, 0.74);
-    border: 1px solid red;
-    border-radius: 5px;
-    color: red;
-    width: 75%;
-    margin-left: 20px;
-    padding: 15px;
-}
-
-.messages-warning{
-    background-color: rgba(244, 247, 199, 0.74);
-    border: 1px solid rgb(221, 206, 0);
-    border-radius: 5px;
-    color: rgb(189, 176, 1);
-    width: 75%;
-    margin-left: 20px;
-    padding: 15px;
-}
-
-
 .c-posts{
     margin: 20px;
     border-radius: 8px;
