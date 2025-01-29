@@ -1,0 +1,98 @@
+body{
+    background-color: #f0f2f5;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.parent{
+    position: relative;
+    margin-top: 200px;
+    width: 90%;
+    height: 80%;
+    font-size: 0px;
+}
+
+.child{
+    position: relative;
+    display: inline-flexbox;
+    font-size: 14px;
+}
+
+.child-1{
+    float: left;
+    margin-left: 30px;
+    width: 400px;
+    height: 200px;
+}
+
+.child-1 img{
+
+    margin: 0;
+    padding: 0;
+    width: 300px;
+
+}
+
+.child-1 p{
+    margin: 0;
+    padding: 0;
+    font-size: 26px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.child-2{
+    float: right;
+    background-color: white;
+    border-radius: 10px;
+    width: 350px;
+    border: solid white;
+    height: 600px;
+    box-shadow: -1px 2px 3px 2px rgb(209, 208, 208);
+}
+
+.clear{
+    clear: both;
+}
+
+.child-2 form{
+    margin: 10px;
+}
+
+.child-2 input{
+    margin: 6px;
+    padding: 10px;
+    width: 90%;
+    height: 50px;
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+
+
+}
+
+#login-botton{
+    font-size: 20px;
+    color: white;
+    background-color: rgba(29, 70, 255, 0.863);
+}
+
+.child-2 p{
+    margin-bottom: 2px;
+
+    text-align: center;
+}
+
+#create-botton{
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(115, 185, 9);
+    width: 160px;
+}

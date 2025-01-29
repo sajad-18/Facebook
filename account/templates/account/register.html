@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'account/register_style.css' %}">
+    <title>Facebook</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="child child-1">
+            <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg">
+            <p>Facebook helps you connect and share with the people in your life.</p>
+        </div>
+        <div class="child child-2">
+            <form action="" method="post" novalidate>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <br>
+                <input id="login-botton" type="submit" value="Register">
+            </form>
+        </div>
+        
+        <div class="clear"></div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'account/profile_style.css' %}">
+    <title>Facebook</title>
+</head>
+<body>
+    <div class="master">
+        <div class="s-user-profile">
+            <div class="s-user-name">
+                <img src="https://cdn4.iconfinder.com/data/icons/forum-buttons-and-community-signs-1/794/profile-3-512.png">
+                <p>{{ user.username }} | Name | LName | Email</p>
+                <small style="font-size: 10px;">27 followers</small>
+            </div><br><br>
+            <div class="s-user-bio">
+                <img src="{% static 'home/images/asset 7.2.png' %}">
+                <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laborum aperiam quos,</small>
+            </div>
+            <div class="s-user-follow">
+                {% if request.user.id != user.id and not is_following %}
+                    <div class="follow-bottom"><a href="{% url 'account:user_follow' user.id %}"><p>Follow</p></a></div>
+                {% elif  request.user.id != user.id and is_following %}
+                    <div class="unfollow-bottom"><a href="{% url 'account:user_unfollow' user.id %}"><p>Unfollow</p></a></div>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+    {% if messages %}
+        {% for msg in messages %}
+            <p class="messages-{{ msg.tags }}">{{ msg }}</p>
+        {% endfor %}
+    {% endif %}
+    <div class="s-user-post">
+        <p class="posts">Posts: </p>
+        {% if request.user.id == user.id %}
+            <a href="{% url 'home:post_create' %}"><p class="create">Create Post</p></a>
+        {% endif %}
+    </div>
+
+    {% for post in posts %}
+        <div class="s-posts">
+            <div class="s-post">
+                <div class="s-user">
+                    <img src="https://cdn4.iconfinder.com/data/icons/forum-buttons-and-community-signs-1/794/profile-3-512.png">
+                    <small>{{ post.user.username }}</small>
+                </div>
+                <div class="s-post-text">
+                    <p>{{ post.body }}</p>
+
+                    <small>see traslation</small>
+                </div>
+                <div class="s-img">
+
+                </div>
+                <div class="like-comment">
+                    <div style="float: left;">
+                        <svg style="width: 15px;" fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(#paint0_linear_15251_63610)'/><path d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(#paint1_radial_15251_63610)'/><path d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(#paint2_radial_15251_63610)' fill-opacity='.5'/><path d='M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z' fill='#fff'/><defs><radialGradient id='paint1_radial_15251_63610' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='rotate(90 .0005 8) scale(7.99958)'><stop offset='.5618' stop-color='#0866FF' stop-opacity='0'/><stop offset='1' stop-color='#0866FF' stop-opacity='.1'/></radialGradient><radialGradient id='paint2_radial_15251_63610' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='rotate(45 -4.5257 10.9237) scale(10.1818)'><stop offset='.3143' stop-color='#02ADFC'/><stop offset='1' stop-color='#02ADFC' stop-opacity='0'/></radialGradient><linearGradient id='paint0_linear_15251_63610' x1='2.3989' y1='2.3999' x2='13.5983' y2='13.5993' gradientUnits='userSpaceOnUse'><stop stop-color='#02ADFC'/><stop offset='.5' stop-color='#0866FF'/><stop offset='1' stop-color='#2B7EFF'/></linearGradient></defs></svg><small>   5</small>
+                    </div>
+                    <div style="float: right;">
+                        <small> 5 Comments</small>
+                    </div>
+                </div>
+                <hr>
+                <div class="like">
+                    <a id="like-link" href=""><img src="{% static 'home/images/asset 7.1.png' %}"><small> Like</small></a>
+                </div>
+                <hr>
+                <div class="comment">
+                    <p>write your comment:</p>
+                    <textarea name="comment:" id="" cols="30" rows="10"></textarea><br>
+                    <input type="button" value="Send">
+                    <hr>
+
+
+                </div>
+
+            </div>
+        </div>
+    {% endfor %}
+</body>
+</html>

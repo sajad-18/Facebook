@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block link %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home/404_style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1>Error 404</h1>
+{% endblock %}
