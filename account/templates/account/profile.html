@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'base.html' %}
+
+{% block link %}
     {% load static %}
     <link rel="stylesheet" href="{% static 'account/profile_style.css' %}">
-    <title>Facebook</title>
-</head>
-<body>
-    <div class="master">
+{% endblock %}
+
+{% block content %}
+
         <div class="s-user-profile">
             <div class="s-user-name">
                 <img src="https://cdn4.iconfinder.com/data/icons/forum-buttons-and-community-signs-1/794/profile-3-512.png">
@@ -81,5 +79,5 @@
             </div>
         </div>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
