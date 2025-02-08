@@ -176,15 +176,44 @@ hr{
     width: 20%;
 
 }
-
 .comment textarea{
     border: 0px;
+    padding: 5px;
     background-color: #c0c0c0;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 .comment input{
-    border: 1px solid #65676b;
+    border: 1px solid #c0c0c0;
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.s-comment{
+    background-color: #c8deff;
+    border-radius: 10px;
+
+}
+
+.user-comment{
+    background-color: #6296ff;
+    border-top-left-radius: 10px;
+    border-bottom: 2px solid #0062ff;
+    border-top-right-radius: 10px;
+    padding: 5px;
+    width: 97%;
+}
+
+.body-comment{
+    padding: 5px;
+}
+
+.reply-comment{
+    background-color: blue;
+    color: white;
+    margin: 5px;
+    padding: 5px;
     border-radius: 10px;
 }
 

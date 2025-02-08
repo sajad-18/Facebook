@@ -11,9 +11,27 @@ from django.utils.decorators import method_decorator
 
 
 class HomeView(View):
+    form_class = CommentCreateForm
+    form_class_reply = CommentReplyForm
+
+    # def get(self, request):
+    #     posts = Post.objects.all()
+    #     return render(request, 'home/post.html', {'posts': posts})
     def get(self, request):
-        posts = Post.objects.all()
-        return render(request, 'home/post.html', {'posts': posts})
+        posts = Post.objects.prefetch_related('pcomments').all()
+        return render(request, 'home/post.html', {'posts': posts, 'form': self.form_class, 'reply_form': self.form_class_reply})
+
+    @method_decorator(login_required)
+    def post(self, request):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            new_comment = form.save(commit=False)
+            new_comment.user = request.user
+            new_comment.post_id = request.POST.get('post_id')
+            new_comment.save()
+            messages.success(request, 'Your comment has been submitted successfully!', 'success')
+
+        return redirect('home:home')
 
 
 class PostDetailView(View):

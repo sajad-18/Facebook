@@ -10,7 +10,7 @@
     <div class="other">
             <p>Group conversations</p>
             <div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color:var(--primary-icon)"><path d="M11 19a1 1 0 1 0 2 0v-6h6a1 1 0 1 0 0-2h-6V5a1 1 0 1 0-2 0v6H5a1 1 0 1 0 0 2h6v6z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"><path d="M11 19a1 1 0 1 0 2 0v-6h6a1 1 0 1 0 0-2h-6V5a1 1 0 1 0-2 0v6H5a1 1 0 1 0 0 2h6v6z"/></svg>
                 <p>Create new group</p>
             </div>
         </div>
@@ -57,10 +57,43 @@
                         </div>
                         <hr>
                         <div class="comment">
-                            <p>write your comment:</p>
-                            <textarea name="comment:" id="" cols="30" rows="10"></textarea><br>
-                            <input type="button" value="Send">
+                            {% if request.user.is_authenticated %}
+                                <form action="" method="post">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <input type="hidden" name="post_id" value="{{ post.id }}">
+                                    <input type="submit" value="Send">
+                                </form>
+                            {% else %}
+                                <p>Only logged in users can comment.</p>
+                            {% endif %}
+
                             <hr>
+                            {% for comment in post.pcomments.all %}
+                                 <div class="s-comment">
+                                    <p class="user-comment">{{ comment.user }} | {{ comment.created|timesince }}</p>
+                                    <p class="body-comment">{{ comment.body }}</p>
+                                    <button class="reply-btn" onclick="toggleReplyForm(this)">replay</button>
+                                    {% if request.user.is_authenticated %}
+                                        <form action="{% url 'home:add_reply' post.id comment.id %}" method="post" style="display: none">
+                                            {% csrf_token %}
+                                            {{ reply_form.as_p }}
+                                            <input type="submit" value="Send">
+                                        </form>
+                                    {% endif %}
+
+                                    {% with replies=comment.rcomments.all %}
+                                    {% for reply in replies %}
+                                        <p class="reply-comment">{{ reply.user }} <br> {{ reply.body }}</p>
+                                    {% endfor %}
+                                    {% endwith %}
+                                 </div>
+                            {% empty %}
+                                <p>No comment yet!</p>
+                            {% endfor %}
+
+
+
 
 
 
@@ -106,6 +139,16 @@
                 </div>
             </a>
         </div>
+
+
+        <script>
+            function toggleReplyForm(button) {
+                let form = button.nextElementSibling;
+                form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
+            }
+
+
+        </script>
 
 
 {% endblock %}

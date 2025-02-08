@@ -28,4 +28,5 @@ class Comment(models.Model):
     def __str__(self):
         return f'{self.user} - {self.body[:30]}'
 
-
+    class Meta:
+        ordering = ['-created']
