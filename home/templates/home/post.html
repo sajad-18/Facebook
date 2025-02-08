@@ -7,138 +7,132 @@
 
 {% block content %}
     <!-- details -->
-    <div class="other">
-            <p>Group conversations</p>
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"><path d="M11 19a1 1 0 1 0 2 0v-6h6a1 1 0 1 0 0-2h-6V5a1 1 0 1 0-2 0v6H5a1 1 0 1 0 0 2h6v6z"/></svg>
-                <p>Create new group</p>
-            </div>
+    <div class="container">
+        <div class="other">
+                <p>Group conversations</p>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"><path d="M11 19a1 1 0 1 0 2 0v-6h6a1 1 0 1 0 0-2h-6V5a1 1 0 1 0-2 0v6H5a1 1 0 1 0 0 2h6v6z"/></svg>
+                    <p>Create new group</p>
+                </div>
         </div>
         <div class="main">
-
-
-            {% include 'inc/messages.html' %}
-            <div class="c-posts">
-                <img src="https://cdn4.iconfinder.com/data/icons/forum-buttons-and-community-signs-1/794/profile-3-512.png">
-                <input id="c-post" type="text" placeholder="What is in your mind, {{ user.username }}?">
-                {% if request.user.is_authenticated and request.user.id == user.id %}
-                    <a href="{% url 'home:post_create' %}"><input id="c-post-b" type="button" value="Create"></a>
-                {% endif %}
-
-            </div>
-            {% for post in posts %}
-                <div class="s-posts">
-
-                    <div class="s-post">
-                        <div class="s-user">
-                            <a href="{% url 'account:user_profile' post.user.id %}"><img src="https://cdn4.iconfinder.com/data/icons/forum-buttons-and-community-signs-1/794/profile-3-512.png"></a>
-                            <a href="{% url 'account:user_profile' post.user.id %}"><small>{{ post.user.username }}</small></a>
-                            <small style="float: right">{{ post.created|date:" D d M Y" }}</small>
-                        </div>
-                        <div class="s-post-text">
-                            <a href="{% url 'home:post_detail' post.id post.slug %}"><p>{{ post.body }}</p></a>
-
-                            <small>see traslation</small>
-                        </div>
-                        <div class="s-img">
-
-                        </div>
-                        <div class="like-comment">
-                            <div style="float: left;">
-                                <svg style="width: 15px;" fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(#paint0_linear_15251_63610)'/><path d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(#paint1_radial_15251_63610)'/><path d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(#paint2_radial_15251_63610)' fill-opacity='.5'/><path d='M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z' fill='#fff'/><defs><radialGradient id='paint1_radial_15251_63610' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='rotate(90 .0005 8) scale(7.99958)'><stop offset='.5618' stop-color='#0866FF' stop-opacity='0'/><stop offset='1' stop-color='#0866FF' stop-opacity='.1'/></radialGradient><radialGradient id='paint2_radial_15251_63610' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='rotate(45 -4.5257 10.9237) scale(10.1818)'><stop offset='.3143' stop-color='#02ADFC'/><stop offset='1' stop-color='#02ADFC' stop-opacity='0'/></radialGradient><linearGradient id='paint0_linear_15251_63610' x1='2.3989' y1='2.3999' x2='13.5983' y2='13.5993' gradientUnits='userSpaceOnUse'><stop stop-color='#02ADFC'/><stop offset='.5' stop-color='#0866FF'/><stop offset='1' stop-color='#2B7EFF'/></linearGradient></defs></svg><small>   5</small>
-                            </div>
-                            <div style="float: right;">
-                                <small> 5 Comments</small>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="like">
-                            <a id="like-link" href=""><img src="{% static 'home/images/asset 7.1.png' %}"><small> Like</small></a>
-                        </div>
-                        <hr>
-                        <div class="comment">
-                            {% if request.user.is_authenticated %}
-                                <form action="" method="post">
-                                    {% csrf_token %}
-                                    {{ form.as_p }}
-                                    <input type="hidden" name="post_id" value="{{ post.id }}">
-                                    <input type="submit" value="Send">
-                                </form>
-                            {% else %}
-                                <p>Only logged in users can comment.</p>
-                            {% endif %}
-
-                            <hr>
-                            {% for comment in post.pcomments.all %}
-                                 <div class="s-comment">
-                                    <p class="user-comment">{{ comment.user }} | {{ comment.created|timesince }}</p>
-                                    <p class="body-comment">{{ comment.body }}</p>
-                                    <button class="reply-btn" onclick="toggleReplyForm(this)">replay</button>
-                                    {% if request.user.is_authenticated %}
-                                        <form action="{% url 'home:add_reply' post.id comment.id %}" method="post" style="display: none">
-                                            {% csrf_token %}
-                                            {{ reply_form.as_p }}
-                                            <input type="submit" value="Send">
-                                        </form>
-                                    {% endif %}
-
-                                    {% with replies=comment.rcomments.all %}
-                                    {% for reply in replies %}
-                                        <p class="reply-comment">{{ reply.user }} <br> {{ reply.body }}</p>
-                                    {% endfor %}
-                                    {% endwith %}
-                                 </div>
-                            {% empty %}
-                                <p>No comment yet!</p>
-                            {% endfor %}
-
-
-
-
-
-
-                        </div>
-
+                {% include 'inc/messages.html' %}
+                <div class="c-posts">
+                    <div class="container">
+                        <img src="https://cdn4.iconfinder.com/data/icons/forum-buttons-and-community-signs-1/794/profile-3-512.png">
+                        <input id="c-post" type="text" placeholder="What is in your mind, {{ user.username }}?">
+                        {% if request.user.is_authenticated and request.user.id == user.id %}
+                            <a href="{% url 'home:post_create' %}"><input id="c-post-b" type="button" value="Create"></a>
+                        {% endif %}
                     </div>
+                    <hr>
 
                 </div>
-            {% endfor %}
+                {% for post in posts %}
+                    <div class="s-posts">
+                        <div class="s-post">
+                            <div class="s-user">
+                                <a href="{% url 'account:user_profile' post.user.id %}"><img src="https://cdn4.iconfinder.com/data/icons/forum-buttons-and-community-signs-1/794/profile-3-512.png"></a>
+                                <a href="{% url 'account:user_profile' post.user.id %}"><small>{{ post.user.username }}</small></a>
+                                <small style="float: right">{{ post.created|date:" D d M Y" }}</small>
+                            </div>
+                            <div class="s-post-text">
+                                <a href="{% url 'home:post_detail' post.id post.slug %}"><p>{{ post.body }}</p></a>
+
+                                <small>see traslation</small>
+                            </div>
+                            <div class="s-img">
+
+                            </div>
+                            <div class="like-comment">
+                                <div style="float: left;">
+                                    <svg style="width: 15px;" fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(#paint0_linear_15251_63610)'/><path d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(#paint1_radial_15251_63610)'/><path d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(#paint2_radial_15251_63610)' fill-opacity='.5'/><path d='M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z' fill='#fff'/><defs><radialGradient id='paint1_radial_15251_63610' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='rotate(90 .0005 8) scale(7.99958)'><stop offset='.5618' stop-color='#0866FF' stop-opacity='0'/><stop offset='1' stop-color='#0866FF' stop-opacity='.1'/></radialGradient><radialGradient id='paint2_radial_15251_63610' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='rotate(45 -4.5257 10.9237) scale(10.1818)'><stop offset='.3143' stop-color='#02ADFC'/><stop offset='1' stop-color='#02ADFC' stop-opacity='0'/></radialGradient><linearGradient id='paint0_linear_15251_63610' x1='2.3989' y1='2.3999' x2='13.5983' y2='13.5993' gradientUnits='userSpaceOnUse'><stop stop-color='#02ADFC'/><stop offset='.5' stop-color='#0866FF'/><stop offset='1' stop-color='#2B7EFF'/></linearGradient></defs></svg><small>   5</small>
+                                </div>
+                                <div style="float: right;">
+                                    <small> 5 Comments</small>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="like">
+                                <a id="like-link" href=""><img src="{% static 'home/images/asset 7.1.png' %}"><small> Like</small></a>
+                            </div>
+                            <hr>
+                            <div class="comment">
+                                {% if request.user.is_authenticated %}
+                                    <form action="" method="post">
+                                        {% csrf_token %}
+                                        {{ form.as_p }}
+                                        <input type="hidden" name="post_id" value="{{ post.id }}">
+                                        <input type="submit" value="Send">
+                                    </form>
+                                {% else %}
+                                    <p>Only logged in users can comment.</p>
+                                {% endif %}
+
+                                <hr>
+                                {% for comment in post.pcomments.all %}
+                                     <div class="s-comment">
+                                        <p class="user-comment">{{ comment.user }} | {{ comment.created|timesince }}</p>
+                                        <p class="body-comment">{{ comment.body }}</p>
+                                        <button class="reply-btn" onclick="toggleReplyForm(this)">replay</button>
+                                        {% if request.user.is_authenticated %}
+                                            <form action="{% url 'home:add_reply' post.id comment.id %}" method="post" style="display: none">
+                                                {% csrf_token %}
+                                                {{ reply_form.as_p }}
+                                                <input type="submit" value="Send">
+                                            </form>
+                                        {% endif %}
+
+                                        {% with replies=comment.rcomments.all %}
+                                        {% for reply in replies %}
+                                            <p class="reply-comment">{{ reply.user }} <br> {{ reply.body }}</p>
+                                        {% endfor %}
+                                        {% endwith %}
+                                     </div>
+                                {% empty %}
+                                    <p>No comment yet!</p>
+                                {% endfor %}
+                            </div>
+
+                        </div>
+                    </div>
+                {% endfor %}
         </div>
         <div class="menu">
-            {% if request.user.is_authenticated %}
-            <a href="{% url 'account:user_logout' %}">
-                <div class="account">
+                <a href="">
+                    <div>
+                        <img src="{% static 'home/images/asset 10.png' %}">
+                        <p> Welcome</p>
+                    </div>
+                </a>
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'account:user_profile' request.user.id %}">
+                    <div>
+                        <img src="https://cdn4.iconfinder.com/data/icons/forum-buttons-and-community-signs-1/794/profile-3-512.png">
+                        <p>{{ user.username }}</p>
+                    </div>
+                </a>
+                <a href="{% url 'account:user_logout' %}">
+                    <div>
+                        <p>Logout</p>
+                    </div>
+                </a>
+                {% else %}
+                <a href="{% url 'account:user_register' %}">
+                    <div>
+                        <p>Register</p>
+                    </div>
+                </a>
+                <a href="{% url 'account:user_login' %}">
+                    <div>
+                        <p>Login</p>
+                    </div>
+                </a>
+                {% endif %}
 
-                    <p>Logout</p>
-                </div>
-            </a>
-            <a href="{% url 'account:user_profile' request.user.id %}">
-                <div class="account">
-                    <img src="https://cdn4.iconfinder.com/data/icons/forum-buttons-and-community-signs-1/794/profile-3-512.png">
-                    <p>{{ user.username }}</p>
-                </div>
-            </a>
-            {% else %}
-            <a href="{% url 'account:user_register' %}">
-                <div class="account">
-
-                    <p>Register</p>
-                </div>
-            </a>
-            <a href="{% url 'account:user_login' %}">
-                <div class="account">
-
-                    <p>Login</p>
-                </div>
-            </a>
-            {% endif %}
-            <a href="">
-                <div class="welcome">
-                    <img src="{% static 'home/images/asset 10.png' %}">
-                    <p> Welcome</p>
-                </div>
-            </a>
         </div>
+    </div>
+
 
 
         <script>

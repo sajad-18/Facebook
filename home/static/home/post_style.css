@@ -1,7 +1,11 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
 .other{
-    width: 27%;
-    height: 80%;
-    float: right;
+    width: 300px;
 }
 
 .other p{
@@ -9,10 +13,11 @@
 }
 
 .other div{
-    background-color: rgb(219, 218, 218);
+    background-color: #e3e3e3;
     border-radius: 5px;
     width: 200px;
-    height: 30px;
+    padding: 5px;
+    cursor: pointer;
 }
 
 .other div svg{
@@ -29,9 +34,34 @@
 }
 
 .main{
-    width: 46%;
-    height: 100%;
-    float: right;
+    width: 600px;
+}
+
+.menu{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu a{
+    margin: 5px 0;
+}
+
+.menu a > div{
+    padding: 0 20px;
+    border-radius: 0 15px 15px 0;
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.menu div:hover{
+    background-color: #e0e0e0;
+}
+
+.menu a > div img{
+    width: 40px;
+    margin-right: 10px;
 }
 
 .messages-success{
@@ -75,9 +105,13 @@
     background-color: white;
 }
 
-.c-posts img{
-    width: 30px;
-    float: left;
+.c-posts .container{
+    flex-direction: row;
+    align-items: center;
+}
+
+.c-posts .container img{
+    width: 30px
 }
 
 hr{
@@ -91,7 +125,7 @@ hr{
     background-color: #ececec;
     border: 0px;
     border-radius: 10px;
-    width: 220px;
+    width: 300px;
     height: 20px;
 }
 
@@ -103,22 +137,13 @@ hr{
     box-shadow: 2px 2px #dadada;
     background-color: rgb(0, 172, 72);
     color: white;
-}
-
-#select-photo{
-    margin: 7px;
-    border: 0px;
-    margin-left: 10px;
-    margin-right: auto;
-    width: 200px;
-    height: 30px;
+    cursor: pointer;
 }
 
 .s-posts{
     margin: 20px;
     border-radius: 8px;
     width: 80%;
-    height: 100%;
     box-shadow: 1px 1px #c0c0c0;
     padding: 5px;
     background-color: white;
@@ -209,49 +234,18 @@ hr{
     padding: 5px;
 }
 
+.reply-btn{
+    border: none;
+    margin: 10px ;
+    background: none;
+    cursor: pointer;
+}
+
 .reply-comment{
     background-color: blue;
     color: white;
     margin: 5px;
     padding: 5px;
     border-radius: 10px;
-}
-
-.menu{
-    width: 27%;
-    height: 80%;
-}
-
-.menu a{
-    color: black;
-    text-decoration: none;
-}
-
-.menu div:hover{
-    background-color: #ececec;
-}
-
-.menu div{
-    padding-left: 2px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-
-}
-
-.account img{
-    width: 30px;
-    float: left;
-}
-
-.account p{
-    padding-right: 10px;
-}
-
-.welcome img{
-    width: 30px;
-    float: left;
-}
-
-.welcome p{
-    padding-right: 10px;
+    border: none;
 }
