@@ -30,3 +30,11 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ['-created']
+
+
+class Vote(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='uvotes')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='pvotes')
+
+    def __str__(self):
+        return f'{self.user} liked post {self.post.slug}'

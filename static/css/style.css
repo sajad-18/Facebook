@@ -103,9 +103,9 @@ nav{
 
 .messages-success{
     background-color: rgba(201, 247, 199, 0.74);
-    border: 1px solid green;
+    border: 1px solid #51fc51;
     border-radius: 5px;
-    color: green;
+    color: #1aff00;
     width: 75%;
     margin-left: 20px;
     padding: 15px;
@@ -113,9 +113,9 @@ nav{
 
 .messages-danger{
     background-color: rgba(247, 199, 199, 0.74);
-    border: 1px solid red;
+    border: 1px solid #ff4f4f;
     border-radius: 5px;
-    color: red;
+    color: #ff0000;
     width: 75%;
     margin-left: 20px;
     padding: 15px;
@@ -123,9 +123,9 @@ nav{
 
 .messages-warning{
     background-color: rgba(244, 247, 199, 0.74);
-    border: 1px solid rgb(221, 206, 0);
+    border: 1px solid #fdef44;
     border-radius: 5px;
-    color: rgb(189, 176, 1);
+    color: #ffe900;
     width: 75%;
     margin-left: 20px;
     padding: 15px;

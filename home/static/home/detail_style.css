@@ -123,22 +123,13 @@ hr{
 }
 
 .like-comment{
-    height: 20px;
+    display: flex;
+    align-items: center;
 }
 
 #like-link{
     text-decoration: none;
     color: black;
-
-}
-
-.like{
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
-    text-align: center;
-    width: 20%;
-
 }
 
 .comment textarea{
