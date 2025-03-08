@@ -62,7 +62,7 @@ Now, open `http://127.0.0.1:8000/` to access the project. 🚀
 
 ## 📝 Developer
 👤 **Sajjad**  
-📧 Email: [your-email@example.com](mailto:your-email@example.com)
+📧 Email: [sajjad.ir8415@gmail.com](mailto:sajjad.ir8415@gmail.com)
 📌 GitHub: [github.com/sajad-18](https://github.com/sajad-18)
 
 ---
