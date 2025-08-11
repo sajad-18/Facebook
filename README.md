@@ -60,10 +60,10 @@ Now, open `http://127.0.0.1:8000/` to access the project. 🚀
 
 ---
 
-## 📝 Developer
-👤 **Sajjad**  
-📧 Email: [sajjad.ir8415@gmail.com](mailto:sajjad.ir8415@gmail.com)
-📌 GitHub: [github.com/sajad-18](https://github.com/sajad-18)
+## 👨‍💻 Contact Me
+- 📧 Email: [sajjad.ir8415@gmail.com](mailto:sajjad.ir8415@gmail.com)
+- 💼 LinkedIn: [Sajjad Esmaeilzadeh](https://www.linkedin.com/in/sajad-esmaeilzadeh/)
+- 🌐 Personal Website: [Sevelop.ir](https://www.sevelop.ir)
 
 ---
 
